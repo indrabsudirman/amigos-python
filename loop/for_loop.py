@@ -1,8 +1,13 @@
 names = ["Indra", "Haby", "Lubna", "Nury", "Nenek"]
 
+namesSet = {"Ahmad", "Ali", "Budi", "Siti"} 
+
 #for loop
-for n in names:
-    print(n)
+for idx, name in enumerate(namesSet, start=1):
+    print(idx, name)
+
+for na in names:
+    print(na)
 
 number1 = [1, 2, 3, 4, 5, 6]
 number2 = [7, 2, 3, 8, 9, 6]
