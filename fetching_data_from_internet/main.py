@@ -1,6 +1,7 @@
 # from urllib import request
 import requests
 import json
+import pyttsx4
 
 url = "https://official-joke-api.appspot.com/random_ten"
 response = requests.get(url)
@@ -32,3 +33,5 @@ for j in jsonData:
 print(f"length of jokes : {len(jokes)}")
 for idx, joke in enumerate(jokes, start=1):
     print(f"joke :{idx} : {joke}")
+    pyttsx4.speak(joke.setup)
+    pyttsx4.speak(joke.punchline)
