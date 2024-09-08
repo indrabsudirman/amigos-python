@@ -1,8 +1,9 @@
-from urllib import request
+# from urllib import request
+import requests
 import json
 
 url = "https://official-joke-api.appspot.com/random_ten"
-r = request.urlopen(url)
+response = requests.get(url)
 
 
 class Joke:
@@ -15,9 +16,9 @@ class Joke:
         return f"Setup {self.setup} Punchline {self.punchline}"
     
 
-print(r.getcode())
-data = r.read()
-jsonData = json.loads(data)
+print(response.status_code)
+
+jsonData = json.loads(response.text)
 print(jsonData)
 
 jokes = []
